@@ -4,6 +4,7 @@ import type {
   MoveParams,
   PartInfo,
   PartNode,
+  PartPosition,
   RotateParams,
   ScaleParams,
   VisibilityParams,
@@ -27,6 +28,11 @@ export const catiaApi = {
         )
   },
 
+  /** 获取零件位置信息 */
+  getPartPosition(fullName: string): Promise<PartPosition> {
+    return  request<PartPosition>({ url: `/v1/catia/getposition`, method: 'POST' })
+  },
+
   /** 获取零件 GLB 数据（后端直接返回二进制，用 arraybuffer 接收），用于 3D 视口展示 */
   getPartGlb(fullName: string): Promise<ArrayBuffer> {
     return http
@@ -35,10 +41,10 @@ export const catiaApi = {
   },
 
   /** 移动零件（相对位移） */
-  movePart(id: string, params: MoveParams): Promise<null> {
+  movePart( params: MoveParams): Promise<null> {
     return mock.isMockEnabled
-      ? mock.mockMovePart(id, params)
-      : request<null>({ url: `/catia/parts/${id}/move`, method: 'POST', data: params })
+      ? mock.mockMovePart( params)
+      : request<null>({ url: `/v1/catia/movepart`, method: 'POST', data: params })
   },
 
   /** 旋转零件 */

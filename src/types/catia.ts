@@ -48,12 +48,34 @@ export interface PartInfo {
 
 /** 移动零件请求参数（相对位移） */
 export interface MoveParams {
+  /** 要移动的零件名称 */
+  name: string
   /** X 轴位移（mm） */
   dx: number
   /** Y 轴位移（mm） */
   dy: number
   /** Z 轴位移（mm） */
   dz: number
+}
+
+/** 零件位置信息 */
+export interface PartPosition {
+  /** 零件名称 */
+  name: string
+  /** 局部坐标 */
+  localPosition: Vector3
+  /** 全局坐标 */
+  globalPosition: Vector3
+  /** 零件相对于总成的旋转 */
+  globalRotation: Quaternion
+  /** 父级零件名称 */
+  parentName: string | null
+}
+export interface Quaternion {
+  x: number
+  y: number
+  z: number
+  w: number
 }
 
 /** 旋转零件请求参数 */

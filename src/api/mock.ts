@@ -69,7 +69,7 @@ export function mockFetchPartInfo(id: string): Promise<PartInfo> {
 // 暂以空实现占位，待后端补齐字段与接口契约后再接入真实逻辑。
 
 /** Mock：移动零件 */
-export function mockMovePart(_id: string, _params: MoveParams): Promise<null> {
+export function mockMovePart( _params: MoveParams): Promise<null> {
   return delay(null)
 }
 
