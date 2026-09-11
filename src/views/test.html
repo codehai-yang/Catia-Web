@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>CATIA Web Studio · 页面布局</title>
+<style>
+  html,body{margin:0;padding:0;background:#0f1216;}
+  .wrap{max-width:1400px;margin:0 auto;padding:16px;}
+  .tip{color:#5c6675;font-size:12px;font-family:"PingFang SC","Microsoft YaHei",sans-serif;padding:0 0 12px 4px;letter-spacing:.5px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="tip">CATIA Web Studio — 布局示意（深色专业 CAD 风格）</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 880" width="100%"
+     font-family="'PingFang SC','Microsoft YaHei','Helvetica Neue',Arial,sans-serif">
+
+  <defs>
+    <linearGradient id="vpBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1b212a"/>
+      <stop offset="100%" stop-color="#0d1116"/>
+    </linearGradient>
+    <pattern id="dotGrid" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#252c37"/>
+    </pattern>
+  </defs>
+
+  <!-- ===== 画布底色 ===== -->
+  <rect x="0" y="0" width="1400" height="880" fill="#0f1216"/>
+
+  <!-- ================= 顶栏 TopBar ================= -->
+  <rect x="0" y="0" width="1400" height="56" fill="#1a1e26"/>
+  <line x1="0" y1="56" x2="1400" y2="56" stroke="#2a3039"/>
+
+  <!-- Logo -->
+  <rect x="20" y="16" width="24" height="24" rx="6" fill="#3b82f6"/>
+  <rect x="28" y="24" width="8" height="8" rx="2" fill="#ffffff"/>
+  <text x="54" y="34" font-size="15" font-weight="600" fill="#e1e6ed">CATIA Web Studio</text>
+
+  <!-- 菜单 -->
+  <g font-size="13" fill="#8b95a5">
+    <text x="240" y="34">文件</text>
+    <text x="296" y="34">编辑</text>
+    <text x="352" y="34">视图</text>
+    <text x="408" y="34">插入</text>
+    <text x="464" y="34">工具</text>
+    <text x="520" y="34">窗口</text>
+    <text x="576" y="34">帮助</text>
+  </g>
+
+  <!-- 右侧状态 / 用户 -->
+  <circle cx="1148" cy="28" r="4" fill="#22c55e"/>
+  <text x="1160" y="33" font-size="12" fill="#8b95a5">已连接 CATIA</text>
+  <rect x="1256" y="16" width="26" height="26" rx="6" fill="none" stroke="#2a3039"/>
+  <rect x="1292" y="16" width="26" height="26" rx="6" fill="none" stroke="#2a3039"/>
+  <circle cx="1352" cy="29" r="15" fill="#2a3039" stroke="#3a4250"/>
+  <text x="1352" y="34" font-size="12" fill="#8b95a5" text-anchor="middle">Z</text>
+
+  <!-- ================= 左侧：结构树 ================= -->
+  <rect x="0" y="56" width="260" height="788" fill="#1a1e26"/>
+  <line x1="260" y1="56" x2="260" y2="844" stroke="#2a3039"/>
+
+  <!-- 面板头 -->
+  <rect x="0" y="56" width="260" height="44" fill="#20252e"/>
+  <text x="16" y="83" font-size="13" font-weight="500" fill="#e1e6ed">结构树</text>
+  <rect x="196" y="68" width="20" height="20" rx="4" fill="none" stroke="#3a4250"/>
+  <rect x="226" y="68" width="20" height="20" rx="4" fill="none" stroke="#3a4250"/>
+  <line x1="0" y1="100" x2="260" y2="100" stroke="#2a3039"/>
+
+  <!-- 搜索框 -->
+  <rect x="12" y="112" width="236" height="32" rx="6" fill="#141820" stroke="#2a3039"/>
+  <circle cx="30" cy="127" r="5" fill="none" stroke="#5c6675" stroke-width="1.5"/>
+  <line x1="33.5" y1="130.5" x2="37" y2="134" stroke="#5c6675" stroke-width="1.5"/>
+  <text x="46" y="132" font-size="12" fill="#5c6675">搜索特征 / 参数</text>
+
+  <!-- 树：选中行背景 -->
+  <rect x="8" y="222" width="244" height="26" rx="4" fill="#3b82f6" fill-opacity="0.14"/>
+
+  <g font-size="12">
+    <!-- Part1 -->
+    <path d="M16,180 h8 l-4,5 z" fill="#8b95a5"/>
+    <rect x="32" y="178" width="9" height="9" rx="2" fill="#3b82f6"/>
+    <text x="48" y="187" fill="#e1e6ed" font-weight="500">Part1</text>
+
+    <!-- PartBody -->
+    <path d="M36,206 h8 l-4,5 z" fill="#8b95a5"/>
+    <rect x="52" y="204" width="9" height="9" rx="2" fill="#f59e0b"/>
+    <text x="68" y="213" fill="#c9d1d9">PartBody</text>
+
+    <!-- Pad.1（选中） -->
+    <path d="M56,232 h8 l-4,5 z" fill="#6cb0ff"/>
+    <rect x="72" y="230" width="9" height="9" rx="2" fill="#22c55e"/>
+    <text x="88" y="239" fill="#e1e6ed" font-weight="500">Pad.1</text>
+
+    <!-- Sketch.1 -->
+    <path d="M76,260 l5,4 l-5,4 z" fill="#8b95a5"/>
+    <rect x="92" y="256" width="9" height="9" rx="2" fill="#eab308"/>
+    <text x="108" y="265" fill="#8b95a5">Sketch.1</text>
+
+    <!-- Pocket.1 -->
+    <path d="M56,284 h8 l-4,5 z" fill="#8b95a5"/>
+    <rect x="72" y="282" width="9" height="9" rx="2" fill="#22c55e"/>
+    <text x="88" y="291" fill="#c9d1d9">Pocket.1</text>
+
+    <!-- Sketch.2 -->
+    <path d="M76,312 l5,4 l-5,4 z" fill="#8b95a5"/>
+    <rect x="92" y="308" width="9" height="9" rx="2" fill="#eab308"/>
+    <text x="108" y="317" fill="#8b95a5">Sketch.2</text>
+
+    <!-- Hole.1 -->
+    <path d="M56,336 l5,4 l-5,4 z" fill="#8b95a5"/>
+    <rect x="72" y="334" width="9" height="9" rx="2" fill="#22c55e"/>
+    <text x="88" y="343" fill="#c9d1d9">Hole.1</text>
+
+    <!-- Body.2 -->
+    <path d="M36,362 l5,4 l-5,4 z" fill="#8b95a5"/>
+    <rect x="52" y="360" width="9" height="9" rx="2" fill="#f59e0b"/>
+    <text x="68" y="369" fill="#c9d1d9">Body.2</text>
+
+    <!-- 参数 -->
+    <path d="M36,388 l5,4 l-5,4 z" fill="#8b95a5"/>
+    <rect x="52" y="386" width="9" height="9" rx="2" fill="#5c6675"/>
+    <text x="68" y="395" fill="#8b95a5">参数</text>
+
+    <!-- 关系 -->
+    <path d="M36,414 l5,4 l-5,4 z" fill="#8b95a5"/>
+    <rect x="52" y="412" width="9" height="9" rx="2" fill="#5c6675"/>
+    <text x="68" y="421" fill="#8b95a5">关系</text>
+  </g>
+
+  <!-- ================= 中间：视口工具条 ================= -->
+  <rect x="260" y="56" width="840" height="44" fill="#1a1e26"/>
+  <line x1="260" y1="100" x2="1100" y2="100" stroke="#2a3039"/>
+
+  <!-- 激活按钮 -->
+  <rect x="276" y="63" width="52" height="30" rx="6" fill="#1f2a3d" stroke="#3b82f6"/>
+  <text x="302" y="83" font-size="12" fill="#6cb0ff" text-anchor="middle">选择</text>
+
+  <g font-size="12" fill="#8b95a5">
+    <rect x="334" y="63" width="52" height="30" rx="6" fill="#20252e" stroke="#2a3039"/>
+    <text x="360" y="83" text-anchor="middle">平移</text>
+
+    <rect x="392" y="63" width="52" height="30" rx="6" fill="#20252e" stroke="#2a3039"/>
+    <text x="418" y="83" text-anchor="middle">旋转</text>
+
+    <rect x="450" y="63" width="52" height="30" rx="6" fill="#20252e" stroke="#2a3039"/>
+    <text x="476" y="83" text-anchor="middle">缩放</text>
+
+    <rect x="508" y="63" width="52" height="30" rx="6" fill="#20252e" stroke="#2a3039"/>
+    <text x="534" y="83" text-anchor="middle">适配</text>
+  </g>
+
+  <line x1="576" y1="68" x2="576" y2="88" stroke="#2a3039"/>
+
+  <g font-size="12" fill="#8b95a5">
+    <rect x="586" y="63" width="52" height="30" rx="6" fill="#20252e" stroke="#2a3039"/>
+    <text x="612" y="83" text-anchor="middle">测量</text>
+
+    <rect x="644" y="63" width="52" height="30" rx="6" fill="#20252e" stroke="#2a3039"/>
+    <text x="670" y="83" text-anchor="middle">剖切</text>
+
+    <rect x="702" y="63" width="52" height="30" rx="6" fill="#20252e" stroke="#2a3039"/>
+    <text x="728" y="83" text-anchor="middle">爆炸</text>
+
+    <rect x="760" y="63" width="52" height="30" rx="6" fill="#20252e" stroke="#2a3039"/>
+    <text x="786" y="83" text-anchor="middle">干涉</text>
+  </g>
+
+  <!-- 右侧显示模式 -->
+  <rect x="1000" y="63" width="84" height="30" rx="6" fill="#20252e" stroke="#2a3039"/>
+  <text x="1014" y="83" font-size="12" fill="#8b95a5">着色显示</text>
+  <path d="M1064,75 l4,5 l4,-5 z" fill="#8b95a5"/>
+
+  <!-- ================= 中间：3D 视口 ================= -->
+  <rect x="260" y="100" width="840" height="744" fill="url(#vpBg)"/>
+  <rect x="260" y="100" width="840" height="744" fill="url(#dotGrid)"/>
+
+  <!-- 零件：等轴测带孔板 -->
+  <!-- 右面 -->
+  <polygon points="680,545 810,470 810,514 680,589" fill="#1e2733" stroke="#4a5a70" stroke-width="1.4"/>
+  <!-- 前面（选中高亮） -->
+  <polygon points="550,470 680,545 680,589 550,514" fill="#22303f" stroke="#3b82f6" stroke-width="1.8"/>
+  <!-- 顶面 -->
+  <polygon points="550,470 680,395 810,470 680,545" fill="#2f3a4a" stroke="#4a5a70" stroke-width="1.4"/>
+
+  <!-- 孔内壁 -->
+  <path d="M640,470 A40,23 0 0 0 720,470 L720,514 A40,23 0 0 1 640,514 Z" fill="#131820"/>
+  <!-- 孔口 -->
+  <ellipse cx="680" cy="470" rx="40" ry="23" fill="#0f1419" stroke="#4a5a70" stroke-width="1.2"/>
+
+  <!-- 标注引线 + 信息卡 -->
+  <line x1="870" y1="650" x2="762" y2="556" stroke="#3b82f6" stroke-opacity="0.6" stroke-dasharray="4 3"/>
+  <circle cx="762" cy="556" r="3" fill="#3b82f6"/>
+  <rect x="870" y="630" width="190" height="62" rx="8" fill="#1a1e26" stroke="#3b82f6" stroke-opacity="0.5"/>
+  <text x="886" y="654" font-size="12" fill="#e1e6ed">已选面 · Pad.1 前面</text>
+  <text x="886" y="674" font-size="11" fill="#5c6675">面积 24,000 mm²  |  平面</text>
+
+  <!-- 零件名徽章 -->
+  <rect x="276" y="116" width="136" height="26" rx="6" fill="#1a1e26" stroke="#2a3039"/>
+  <text x="288" y="133" font-size="11" fill="#8b95a5">Part1.CATPart</text>
+
+  <!-- 视图立方体（右上角） -->
+  <g stroke="#4a5a70" stroke-width="1.2">
+    <polygon points="990,175 1030,155 1070,175 1030,195" fill="#2f3a4a"/>
+    <polygon points="990,175 1030,195 1030,223 990,203" fill="#232b36"/>
+    <polygon points="1030,195 1070,175 1070,203 1030,223" fill="#1c232c"/>
+    <line x1="1030" y1="195" x2="1030" y2="223"/>
+  </g>
+
+  <!-- 坐标轴（左下角） -->
+  <g stroke-width="1.6">
+    <line x1="335" y1="795" x2="335" y2="752" stroke="#3b82f6"/>
+    <line x1="335" y1="795" x2="388" y2="818" stroke="#ef4444"/>
+    <line x1="335" y1="795" x2="284" y2="818" stroke="#22c55e"/>
+  </g>
+  <path d="M335,748 l-3,7 l6,0 z" fill="#3b82f6"/>
+  <path d="M392,820 l-8,-1 l3,-6 z" fill="#ef4444"/>
+  <path d="M280,820 l8,-1 l-3,-6 z" fill="#22c55e"/>
+  <text x="335" y="742" font-size="11" fill="#3b82f6" text-anchor="middle">Z</text>
+  <text x="400" y="826" font-size="11" fill="#ef4444">X</text>
+  <text x="266" y="826" font-size="11" fill="#22c55e">Y</text>
+
+  <!-- 操作提示 -->
+  <rect x="820" y="798" width="260" height="28" rx="6" fill="#1a1e26" fill-opacity="0.9" stroke="#2a3039"/>
+  <text x="950" y="816" font-size="11" fill="#5c6675" text-anchor="middle">左键旋转 · 中键平移 · 滚轮缩放</text>
+
+  <!-- ================= 右侧：属性面板 ================= -->
+  <rect x="1100" y="56" width="300" height="788" fill="#1a1e26"/>
+  <line x1="1100" y1="56" x2="1100" y2="844" stroke="#2a3039"/>
+
+  <!-- Tabs -->
+  <rect x="1100" y="56" width="300" height="40" fill="#1a1e26"/>
+  <line x1="1100" y1="96" x2="1400" y2="96" stroke="#2a3039"/>
+  <text x="1120" y="81" font-size="13" font-weight="500" fill="#e1e6ed">属性</text>
+  <rect x="1116" y="94" width="38" height="2" fill="#3b82f6"/>
+  <text x="1176" y="81" font-size="13" fill="#5c6675">参数</text>
+  <text x="1232" y="81" font-size="13" fill="#5c6675">材料</text>
+
+  <!-- 分组：几何信息 -->
+  <text x="1116" y="130" font-size="11" fill="#5c6675" letter-spacing="1">几何信息</text>
+  <line x1="1116" y1="142" x2="1384" y2="142" stroke="#232830"/>
+
+  <g font-size="12">
+    <text x="1116" y="166" fill="#8b95a5">名称</text>
+    <text x="1384" y="166" fill="#e1e6ed" text-anchor="end">Pad.1</text>
+
+    <text x="1116" y="192" fill="#8b95a5">类型</text>
+    <text x="1384" y="192" fill="#e1e6ed" text-anchor="end">凸台 (Pad)</text>
+
+    <text x="1116" y="218" fill="#8b95a5">体积</text>
+    <text x="1384" y="218" fill="#e1e6ed" text-anchor="end">12,480 mm³</text>
+
+    <text x="1116" y="244" fill="#8b95a5">表面积</text>
+    <text x="1384" y="244" fill="#e1e6ed" text-anchor="end">3,240 mm²</text>
+  </g>
+
+  <!-- 分组：位置变换 -->
+  <text x="1116" y="282" font-size="11" fill="#5c6675" letter-spacing="1">位置变换</text>
+  <line x1="1116" y1="292" x2="1384" y2="292" stroke="#232830"/>
+
+  <g font-size="10" fill="#5c6675">
+    <text x="1122" y="308">X</text>
+    <text x="1214" y="308">Y</text>
+    <text x="1306" y="308">Z</text>
+  </g>
+  <g>
+    <rect x="1116" y="314" width="80" height="32" rx="6" fill="#141820" stroke="#2a3039"/>
+    <text x="1156" y="335" font-size="12" fill="#c9d1d9" text-anchor="middle">0.00</text>
+
+    <rect x="1208" y="314" width="80" height="32" rx="6" fill="#141820" stroke="#2a3039"/>
+    <text x="1248" y="335" font-size="12" fill="#c9d1d9" text-anchor="middle">0.00</text>
+
+    <rect x="1300" y="314" width="80" height="32" rx="6" fill="#141820" stroke="#3b82f6"/>
+    <text x="1340" y="335" font-size="12" fill="#6cb0ff" text-anchor="middle">40.00</text>
+  </g>
+
+  <!-- 分组：外观 -->
+  <text x="1116" y="380" font-size="11" fill="#5c6675" letter-spacing="1">外观</text>
+  <line x1="1116" y1="390" x2="1384" y2="390" stroke="#232830"/>
+  <rect x="1116" y="404" width="32" height="32" rx="6" fill="#6b8cae" stroke="#2a3039"/>
+  <text x="1160" y="424" font-size="12" fill="#c9d1d9">钢 · 哑光灰</text>
+
+  <!-- 透明度滑块 -->
+  <rect x="1116" y="460" width="268" height="4" rx="2" fill="#2a3039"/>
+  <rect x="1116" y="460" width="134" height="4" rx="2" fill="#3b82f6"/>
+  <circle cx="1250" cy="462" r="8" fill="#e1e6ed"/>
+
+  <!-- 分组：参数表 -->
+  <text x="1116" y="510" font-size="11" fill="#5c6675" letter-spacing="1">参数表</text>
+  <line x1="1116" y1="520" x2="1384" y2="520" stroke="#232830"/>
+
+  <g font-size="11" fill="#5c6675">
+    <text x="1116" y="542">名称</text>
+    <text x="1250" y="542">值</text>
+    <text x="1384" y="542" text-anchor="end">单位</text>
+  </g>
+  <line x1="1116" y1="552" x2="1384" y2="552" stroke="#232830"/>
+
+  <g font-size="12">
+    <text x="1116" y="576" fill="#c9d1d9">高度</text>
+    <text x="1250" y="576" fill="#e1e6ed">40</text>
+    <text x="1384" y="576" fill="#5c6675" text-anchor="end">mm</text>
+
+    <text x="1116" y="602" fill="#c9d1d9">孔半径</text>
+    <text x="1250" y="602" fill="#e1e6ed">12</text>
+    <text x="1384" y="602" fill="#5c6675" text-anchor="end">mm</text>
+
+    <text x="1116" y="628" fill="#c9d1d9">深度</text>
+    <text x="1250" y="628" fill="#e1e6ed">25</text>
+    <text x="1384" y="628" fill="#5c6675" text-anchor="end">mm</text>
+  </g>
+
+  <!-- 底部操作按钮 -->
+  <rect x="1116" y="786" width="128" height="34" rx="6" fill="#3b82f6"/>
+  <text x="1180" y="808" font-size="13" fill="#ffffff" text-anchor="middle">应用</text>
+
+  <rect x="1256" y="786" width="128" height="34" rx="6" fill="#20252e" stroke="#2a3039"/>
+  <text x="1320" y="808" font-size="13" fill="#8b95a5" text-anchor="middle">重置</text>
+
+  <!-- ================= 底部状态栏 ================= -->
+  <rect x="0" y="844" width="1400" height="36" fill="#1a1e26"/>
+  <line x1="0" y1="844" x2="1400" y2="844" stroke="#2a3039"/>
+
+  <circle cx="24" cy="862" r="4" fill="#22c55e"/>
+  <text x="36" y="866" font-size="11" fill="#8b95a5">就绪</text>
+
+  <line x1="80" y1="854" x2="80" y2="870" stroke="#2a3039"/>
+  <text x="96" y="866" font-size="11" fill="#5c6675">X: 12.50   Y: 0.00   Z: 40.00</text>
+
+  <text x="1170" y="866" font-size="11" fill="#5c6675" text-anchor="end">已选 1 个面</text>
+  <line x1="1188" y1="854" x2="1188" y2="870" stroke="#2a3039"/>
+  <text x="1290" y="866" font-size="11" fill="#5c6675" text-anchor="end">同步 12 ms</text>
+  <line x1="1306" y1="854" x2="1306" y2="870" stroke="#2a3039"/>
+  <text x="1384" y="866" font-size="11" fill="#22c55e" text-anchor="end">60 FPS</text>
+
+</svg>
+</div>
+</body>
+</html>
